@@ -34,7 +34,7 @@ app.get('/api/health', (req, res) => {
  * API status endpoint - tells frontend if server has API key
  */
 app.get('/api/status', (req, res) => {
-    const hasApiKey = !!process.env.CLAUDE_API_KEY;
+    const hasApiKey = !!process.env.GEMINI_API_KEY;
     res.json({
         success: true,
         apiConfigured: hasApiKey,
@@ -98,10 +98,10 @@ app.post('/api/generate', async (req, res) => {
     } = req.body;
 
     // Use server-side API key from environment variable
-    const apiKey = process.env.CLAUDE_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-        return res.status(500).json({ success: false, error: 'Server API key not configured. Please set CLAUDE_API_KEY environment variable.' });
+        return res.status(500).json({ success: false, error: 'Server API key not configured. Please set GEMINI_API_KEY environment variable.' });
     }
 
     if (!jobDescription) {
