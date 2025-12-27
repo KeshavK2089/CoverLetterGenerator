@@ -1,0 +1,20 @@
+{
+  "name": "cover-letter-generator",
+  "version": "1.0.0",
+  "description": "Biotech/Pharma Cover Letter & Resume Bullet Point Generator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.24.0",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "cors": "^2.8.5",
+    "docx": "^8.5.0",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1"
+  }
+}
