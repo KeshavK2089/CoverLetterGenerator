@@ -11,7 +11,7 @@ const { getCoverLetterPrompt, getResumeBulletsPrompt } = require('./prompts');
  */
 async function generateCoverLetter(apiKey, resumeText, jobDescription, companyInfo, roleTitle, companyName) {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
 
     const prompt = getCoverLetterPrompt(resumeText, jobDescription, companyInfo, roleTitle, companyName);
 
@@ -41,7 +41,7 @@ async function generateCoverLetter(apiKey, resumeText, jobDescription, companyIn
  */
 async function generateResumeBullets(apiKey, resumeText, jobDescription, roleTitle, companyName) {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
 
     const prompt = getResumeBulletsPrompt(resumeText, jobDescription, roleTitle, companyName);
 
@@ -71,7 +71,7 @@ async function generateResumeBullets(apiKey, resumeText, jobDescription, roleTit
  */
 async function analyzeCompanyData(apiKey, companyInfo, companyName) {
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
 
     const prompt = `Analyze this company information and extract key points useful for a job application cover letter.
 
